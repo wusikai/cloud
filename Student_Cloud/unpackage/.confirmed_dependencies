@@ -1,0 +1,9 @@
+{
+  "index.html": {
+    "refer": [
+      "index-menu.html",
+      "examples/guide.html",
+      "examples/progressbar.html"
+    ]
+  }
+}

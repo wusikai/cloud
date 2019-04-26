@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Cloud云题库-学生端</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link href="fonts/mui-icons-extra.ttf" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+			z.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			/*个人中心头像*/
+			#userImg{
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
+				position: absolute;
+				top: 20%;
+				left: 40%;
+			}
+			#head_input{/*个人中心学生样式*/
+				color: #F0F0F0;
+				font-weight: bold; 
+				background-color:darkorange;
+				position: absolute;
+				top: 65%;
+				left: 41%;
+				border-radius: 35%;
+				height: 30px;
+			}
+			/*刷题列表的样式*/
+			.div_list{
+				text-indent: 45px;
+				font-size: 13px;
+				color: gray;
+			}
+			/*刷题列表(完成中)样式*/
+			#div_size{
+				display: inline-block;color: dodgerblue;font-size: 15px;text-indent: 10px;
+			}
+			/*刷题列表的图片样式*/
+			#list_image{
+				font-size: 45px;
+				position: absolute;
+				color: deepskyblue;
+			}
+			/*刷题列表标题*/
+			#list_title{
+				text-indent: 45px;
+			}
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-topic"></span>
+				<span class="mui-tab-label">我的任务</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
+				<span class="mui-tab-label">码农词汇</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div id="tabbar" class="mui-control-content mui-active">
+				
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<div class="mui-media-body "><div class="mui-icon-extra mui-icon-extra-order" id="list_image"></div><div id="list_title">第一章-软件技术基础</div>
+								<p class='mui-ellipsis'><div class="div_list">共50道题&nbsp;&nbsp;04-24/04-25<div id="div_size">完成中</div></div></p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<div class="mui-media-body"><div class="mui-icon-extra mui-icon-extra-order" id="list_image"></div><div id="list_title">第一章-软件技术基础</div>
+								<p class='mui-ellipsis'><div class="div_list">共50道题&nbsp;&nbsp;04-24/04-25<div id="div_size">完成中</div></div></p>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<div class="mui-media-body"><div class="mui-icon-extra mui-icon-extra-order" id="list_image"></div><div id="list_title">第一章-软件技术基础</div>
+								<p class='mui-ellipsis'><div class="div_list">共50道题&nbsp;&nbsp;04-24/04-25<div id="div_size">完成中</div></div></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div id="tabbar-with-chat" class="mui-control-content">
+				<ul class="mui-table-view">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<a href="#">
+								<span class="mui-icon mui-icon-extra mui-icon-extra-order" style="color: deepskyblue;"></span>
+								<div class="mui-media-body">词汇</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<a href="#">
+								<span class="mui-icon mui-icon-extra mui-icon-extra-university" style="color: deepskyblue;"></span>
+								<div class="mui-media-body">单词听写</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="color: deepskyblue;">
+							<a href="#">
+								<span class="mui-icon mui-icon-extra mui-icon-extra-dictionary"></span>
+								<div class="mui-media-body">英文测试</div>
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+			<div id="tabbar-with-map" class="mui-control-content">
+				<div class="mui-card" >
+					<div class="mui-card-header mui-card-media"  style="height:50vw;background-color:deepskyblue"></div>
+				<img class="userImg" id="userImg" src="images/55.jpg" /> </li>
+				<input type="button" id="head_input" value="学生" />
+				</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right mui-icon mui-icon-contact">
+							用户角色<div style="text-indent:105px; display: inline-block;">张三</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right mui-icon mui-icon-extra mui-icon-extra-peoples">
+							学生班级<div style="text-indent:105px; display: inline-block;">T7111</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right mui-icon mui-icon-compose">
+							意见反馈
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 25px;">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right mui-icon mui-icon-info">
+							关于Cloud云题库
+						</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view" style="margin-top: 25px;">
+					<li class="mui-table-view-cell">
+						<a style="text-align: center;color: #FF3B30;">
+							退出登录
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		
+		mui.plusReady(function(){
+    document.getElementById('userImg').addEventListener('tap',function(){
+        if(mui.os.plus){
+            var a=[{
+                title:'拍照'
+            },{
+                title:'从手机相册选择'
+            }];
+            plus.nativeUI.actionSheet({
+                cancel:'取消',
+                buttons:a
+            },function(b){
+                switch(b.index){
+                    case 0:
+                        break;
+                    case 1:
+                        //拍照
+                        getImages();
+                        break;
+                    case 2:
+                        //打开相册
+                        galleryImages();
+                        break;
+                    default:
+                        break;
+                }
+            },false);   
+        }
+    });
+
+    //拍照
+    function getImages(){
+        var mobileCamera=plus.camera.getCamera();
+        mobileCamera.captureImage(function(e){
+            plus.io.resolveLocalFileSystemURL(e,function(entry){
+                var path=entry.toLocalURL()+'?version='+new Date().getTime();
+                uploadHeadImg(path);
+            },function(err){
+                console.log("读取拍照文件错误");
+            });
+        },function(e){
+            console.log("er",err);
+        },function(){
+            filename:'_doc/head.png';
+        });
+    }
+
+    //从本地相册选择
+    function galleryImages(){
+        console.log("你选择了从相册选择");
+        plus.gallery.pick(function(a){
+            plus.io.resolveLocalFileSystemURL(a,function(entry){
+                plus.io.resolveLocalFileSystemURL('_doc/',function(root){
+                    root.getFile('head.png',{},function(file){
+                        //文件已经存在
+                        file.remove(function(){
+                            console.log("文件移除成功");
+                            entry.copyTo(root,'head.png',function(e){
+                                var path=e.fullPath+'?version='+new Date().getTime();
+                                uploadHeadImg(path);
+                            },function(err){
+                                console.log("copy image fail: ",err);
+                            });
+                        },function(err){
+                            console.log("删除图片失败：（"+JSON.stringify(err)+")");
+                        });
+                    },function(err){
+                        //打开文件失败
+                        entry.copyTo(root,'head.png',function(e){
+                            var path=e.fullPath+'?version='+new Date().getTime();
+                            uploadHeadImg(path);
+                        },function(err){
+
+                            console.log("上传图片失败：（"+JSON.stringify(err)+")");
+                        });
+                    });
+                },function(e){
+                    console.log("读取文件夹失败：（"+JSON.stringify(err)+")");
+                });
+            });
+        },function(err){
+            console.log("读取拍照文件失败: ",err);
+        },{
+            filter:'image'
+        });
+    };
+
+    //上传图片
+    function uploadHeadImg(imgPath){
+        //选中图片之后，头像当前的照片变为选择的照片
+        var mainImg=document.getElementById('userImg');
+        mainImg.src=imgPath;
+
+
+        var images=new Image();
+        images.src=imgPath;
+        var imgData=getBase64Image(images);
+        mui.ajax('http://127.0.0.1/uploadHeadImg',{
+            data:{
+                'imgDatas':imgData
+            },
+            dataType:'json',//服务器返回json格式数据
+            type:'post',//HTTP请求类型
+            timeout:10000,//超时时间设置为10秒；
+            success:function(data){
+                if(data.status=='1'){
+                    mui.alert('上传成功！');
+                }
+            },
+            error:function(xhr,type,errorThrown){
+                if(type=='timeout'){
+                    mui.alert('服务器连接超时，请稍后再试');
+                }   
+            }
+        });
+    }
+
+
+    //压缩图片转成base64
+    function getBase64Image(img){
+        var canvas=document.createElement("canvas");
+        var width=img.width;
+        var height=img.height;
+        if(width>height){
+            if(width>100){
+                height=Math.round(height*=100/width);
+                width=100;
+            }
+        }else{
+            if(height>100){
+                width=Math.round(width*=100/height);
+            }
+            height=100;
+        }
+
+        canvas.width=width;
+        canvas.height=height;
+        var ctx=canvas.getContext('2d');
+        ctx.drawImage(img,0,0,width,height);
+
+        var dataUrl=canvas.toDataURL('image/png',0.8);
+        return dataUrl.replace('data:image/png:base64,','');
+    }   
+});
+	</script>
+
+</html>
